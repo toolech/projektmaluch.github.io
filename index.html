@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projekt Maluch</title>
+  <style>
+    :root {
+      --bg: #0f172a;         /* slate-900 */
+      --fg: #e2e8f0;         /* slate-200 */
+      --muted: #94a3b8;      /* slate-400 */
+      --ring: #38bdf8;       /* sky-400 */
+      --icon-size: 28px;
+      --circle: 56px;
+      --gap: 16px;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; 
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color: var(--fg);
+      background: radial-gradient(1200px 800px at 50% 20%, #111827 0%, var(--bg) 60%);
+    }
+
+    /* Center everything */
+    .wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      display: grid;
+      justify-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      width: clamp(96px, 18vw, 180px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 6px 24px rgba(0,0,0,.35));
+      user-select: none;
+      -webkit-user-drag: none;
+      margin-bottom: 5%;
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(18px, 2.8vw, 24px);
+      font-weight: 600;
+      color: var(--fg);
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(14px, 2.2vw, 16px);
+    }
+
+    /* Social row */
+    .socials {
+      display: flex;
+      gap: var(--gap);
+      align-items: center;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    .socials a {
+      width: var(--circle);
+      height: var(--circle);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--fg);
+      text-decoration: none;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      outline: none;
+    }
+
+    .socials a:hover,
+    .socials a:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(56, 189, 248, .12);
+      border-color: rgba(56, 189, 248, .45);
+      box-shadow: 0 8px 24px rgba(56, 189, 248, .18), inset 0 0 0 999px rgba(56, 189, 248, .04);
+    }
+
+    .icon {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      display: block;
+    }
+
+    /* Slightly larger touch targets on small screens */
+    @media (max-width: 480px) {
+      :root {
+        --icon-size: 26px;
+        --circle: 60px;
+        --gap: 14px;
+      }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .socials a {
+        transition: none;
+      }
+      .socials a:hover,
+      .socials a:focus-visible {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Landing">
+      <!-- Replace with your logo -->
+      <img class="logo" src="logo.png" alt="Projekt Maluch" />
+
+      <nav class="socials" aria-label="Social links">
+        <!-- YouTube -->
+        <a class="yt" href="https://youtube.com/@projektmaluch2734" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <!-- YouTube play glyph inside rounded rect -->
+            <path d="M23.5 6.2a4.3 4.3 0 0 0-3.02-3.02C18.6 2.5 12 2.5 12 2.5s-6.6 0-8.48.68A4.3 4.3 0 0 0 .5 6.2 45.8 45.8 0 0 0 .5 17.8a4.3 4.3 0 0 0 3.02 3.02C5.4 21.5 12 21.5 12 21.5s6.6 0 8.48-.68a4.3 4.3 0 0 0 3.02-3.02 45.8 45.8 0 0 0 0-11.6ZM9.75 8.3l6.5 3.7-6.5 3.7V8.3Z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a class="fb" href="https://facebook.com/ProjektMaluch" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.19 2.24.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.77l-.44 2.9h-2.33v7.03C18.34 21.24 22 17.08 22 12.06Z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a class="ig" href="https://instagram.com/projektmaluch" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm6.25-.75a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+          </svg>
+        </a>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>
